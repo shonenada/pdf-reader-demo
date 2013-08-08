@@ -1,3 +1,3 @@
 PDF Reader
 ==========
-A experiment for stacampus.
+A demo PDF Reader for stacampus.
