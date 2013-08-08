@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>A demo of StuCamspu PDf reader</title>
+        <link rel="stylesheet" type="text/css" href="{{ static_url('styles/base.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ static_url('styles/reader.css') }}" />
+        <script type="text/javascript" charset="urf-8" src="{{ static_url('scripts/plugins/jquery-1.7.2.min.js') }}" ></script>
+        <script type="text/javascript" charset="urf-8" src="{{ static_url('scripts/global.js') }}" ></script>
+    </head>
+
+    <body>
+        <div id="toolbar">
+            <button class="zoom zoom-in"></button>
+            <button class="zoom zoom-out"></button>
+        </div>
+        <div class="title">
+        {{ title }}
+        </div>
+        <div id="pdf-borad">
+        {% for page in pages %}
+            <div id="page-{{page}}" class="page">
+                <a name="page-{{page[0]}}"></a>
+                <img src="{{ static_url('pdfs/pic/' + page[1]) }}" class="piece" />
+                <span class="page-no">{{ page[0] }}</span>
+            </div>
+        {% end %}
+        </div>
+    </body>
+
+</html>

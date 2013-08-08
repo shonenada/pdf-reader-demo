@@ -1,0 +1,61 @@
+body{
+    background: url(../images/bg.png) fixed;
+}
+
+#toolbar{
+    position: fixed;
+    left: 0px;
+    width: 30px;
+    text-align: center;
+}
+
+.title{
+    font-size: 24px;
+    margin: 0 auto;
+    line-height: 80px;
+    width: 800px;
+    text-align: center;
+    color: #fff;
+}
+
+.zoom{
+    width: 25px;
+    height: 25px;
+    border: none;
+    margin: 10px;
+}
+
+.zoom-in{
+    background: url(../images/zoom-in.png);
+}
+
+.zoom-out{
+    background: url(../images/zoom-out.png);
+}
+
+#pdf-borad{
+    margin: 0 auto;
+    width: 800px;
+
+}
+
+.page{
+    position: relative;
+}
+
+.piece{
+    margin-bottom: 20px;
+    width: 800px;
+    -moz-box-shadow: 3px 3px 4px #111;
+    -webkit-box-shadow: 3px 3px 4px #111;
+    box-shadow: 3px 3px 4px #111;
+}
+
+.page-no{
+    font-size: 12px;
+    position: absolute;
+    width: 20px;
+    bottom: 35px;
+    left: 50%;
+    margin-left: -10px;
+}
