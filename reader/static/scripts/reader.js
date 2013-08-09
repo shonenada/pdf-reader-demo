@@ -1,30 +1,19 @@
 $(function(){
 
-    var SMALL_SIZE = 800;
-    var MIDDLE_SIZE = 960;
-    var LARGE_SIZE = 1024;
+    var MINIMUM_SIZE = 800;
+    var MAXIMUM_SIZE = 1000;
 
     $("#zoom-in").click(function(){
         var width = parseInt($(".piece").css('width').replace("px", "'"));
-        if (width == SMALL_SIZE){
-            $(".piece").removeClass("piece-size-small");
-            $(".piece").addClass("piece-size-middle");
-        }
-        if (width == MIDDLE_SIZE){
-            $(".piece").removeClass("piece-size-middle");
-            $(".piece").addClass("piece-size-large");
+        if (width < MAXIMUM_SIZE){
+            $(".piece").animate({width: '+=50px'}, 'fast')
         }
     });
-    
+
    $("#zoom-out").click(function(){
         var width = parseInt($(".piece").css('width').replace("px", "'"));
-        if (width == MIDDLE_SIZE){
-            $(".piece").removeClass("piece-size-middle");
-            $(".piece").addClass("piece-size-small");
-        }
-        if (width == LARGE_SIZE){
-            $(".piece").removeClass("piece-size-large");
-            $(".piece").addClass("piece-size-middle");
+        if (width > MINIMUM_SIZE){
+            $(".piece").animate({width: '-=50px'}, 'fast')
         }
     });
 });
