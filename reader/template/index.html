@@ -5,24 +5,28 @@
         <link rel="stylesheet" type="text/css" href="{{ static_url('styles/base.css') }}" />
         <link rel="stylesheet" type="text/css" href="{{ static_url('styles/reader.css') }}" />
         <script type="text/javascript" charset="urf-8" src="{{ static_url('scripts/plugins/jquery-1.7.2.min.js') }}" ></script>
+        <script type="text/javascript" charset="urf-8" src="{{ static_url('scripts/plugins/jqScroll.js') }}" ></script>
         <script type="text/javascript" charset="urf-8" src="{{ static_url('scripts/global.js') }}" ></script>
         <script type="text/javascript" charset="urf-8" src="{{ static_url('scripts/reader.js') }}" ></script>
     </head>
 
     <body>
         <div id="toolbar">
-            <button class="zoom zoom-in" id="zoom-in"></button>
-            <button class="zoom zoom-out" id="zoom-out"></button>
+            <button class="icon zoom-in" id="zoom-in"></button>
+            <button class="icon zoom-out" id="zoom-out"></button>
+            <button class="icon arrow-up" id="arrow-up"></button>
+            <button class="icon arrow-down" id="arrow-down"></button>
         </div>
+        <div id="current-page-no">1</div>
         <div class="title">
         {{ title }}
         </div>
         <div id="pdf-borad">
         {% for page in pages %}
             <div id="page-{{page}}" class="page">
-                <a name="page-{{page[0]}}"></a>
-                <img src="{{ static_url('pdfs/pic/' + page[1]) }}" class="piece piece-size-middle" />
-                <span class="page-no">{{ page[0] }}</span>
+                <a name="page-{{page[0]}}" class="page-hash" id="page-hash-{{page[0]}}"></a>
+                <img src="{{ static_url('pdfs/pic/' + page[1]) }}" class="piece" />
+                <span class="page-no" id="page-no-{{page[0]}}">{{ page[0] }}</span>
             </div>
         {% end %}
         </div>
